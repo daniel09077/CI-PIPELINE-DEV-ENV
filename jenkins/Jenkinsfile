@@ -1,9 +1,19 @@
 pipeline{
     agent any
     stages{
-        stage('hello'){
+        stage('Checkout'){
             steps{
-                echo 'Hello World'
+                checkout scm
+            }
+        }
+        stage('Validate'){
+            steps{
+                sh 'mvn validate'
+            }
+        }
+        stage('Test'){
+            steps{
+                sh 'mvn test'
             }
         }
     }
