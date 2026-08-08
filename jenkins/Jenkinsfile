@@ -11,17 +11,18 @@ pipeline{
         }
         stage('Validate'){
            steps{
-            dir(env.MAVEN_PROJ_DIR){
-                sh 'mvn validate'
-            }   
+                dir(env.MAVEN_PROJ_DIR){
+                    sh 'mvn validate'
+                }   
             }
         }
-        }
+        
         stage('Test'){
-         steps{
-            dir(env.MAVEN_PROJ_DIR){
-                sh 'mvn test'
-            }   
+            steps{
+                dir(env.MAVEN_PROJ_DIR){
+                    sh 'mvn test'
+                }   
             }
         }
     }
+}
