@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        MAVEN_PROJ_DIR = 'java'
+    }
     stages{
         stage('Checkout'){
             steps{
@@ -7,11 +10,17 @@ pipeline{
             }
         }
         stage('Validate'){
+            dir(env.MAVEN_PROJ_DIR){
+                sh 'mvn validate'
+            }
             steps{
                 sh 'mvn validate'
             }
         }
         stage('Test'){
+            dir(env.MAVEN_PROJ_DIR){
+                sh 'mvn test'
+            }
             steps{
                 sh 'mvn test'
             }
