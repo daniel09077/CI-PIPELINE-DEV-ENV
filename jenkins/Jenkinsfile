@@ -16,7 +16,6 @@ pipeline{
                 }   
             }
         }
-        
         stage('Test'){
             steps{
                 dir(env.MAVEN_PROJ_DIR){
