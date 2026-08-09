@@ -19,6 +19,8 @@ pipeline{
         stage('Test'){
             steps{
                 dir(env.MAVEN_PROJ_DIR){
+                    sh 'pwd'
+                    sh 'find . -type f'
                     sh 'mvn test'
                 }   
             }
