@@ -27,6 +27,7 @@ pipeline{
             steps{
                 dir(env.MAVEN_PROJ_DIR){
                     withCredentials([string(credentialsID: 'test-sonarqube-id', variable: 'SONAR_TOKEN')]){
+                        echo "SonarQube Token: $SONAR_TOKEN"
                        sh ''' 
                             mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                             -Dsonar.projectKey=jenkins-sonarqube \
