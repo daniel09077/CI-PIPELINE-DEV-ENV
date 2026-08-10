@@ -23,5 +23,21 @@ pipeline{
                 }   
             }
         }
+        stage('Sonarqube Analysis'){
+            steps{
+                dir(env.MAVEN_PROJ_DIR){
+                    withCredenttials([string(credentialsID: 'sonarqube-token', variable: 'SONAR_TOKEN')]){
+                       sh ''' 
+                            mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                            -Dsonar.projectKey=jenkins-sonarqube \
+                            -Dsonar.projectName='jenkins-sonarqube' \
+                            -Dsonar.host.url=http://sonarqube:9000 \
+                            -Dsonar.token=$SONAR_TOKEN \
+                            -Dsonar..scanner.skipJreProvisioning=true
+                       '''
+            }
+        }
+    }
+}
     }
 }
