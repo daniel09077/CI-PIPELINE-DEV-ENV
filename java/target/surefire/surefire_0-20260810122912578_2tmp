@@ -1,9 +1,0 @@
-#surefire_0
-#Mon Aug 10 12:29:12 PDT 2026
-basedir=/Users/tempest/Documents/Dev-block-block-pipeline-job/java
-localRepository=/Users/tempest/.m2/repository
-sonar.host.url=http\://192.168.1.196\:8083
-sonar.projectKey=jenkins-sonarqube
-sonar.projectName=jenkins-sonarqube
-sonar.scanner.skipJreProvisioning=true
-sonar.token=sqp_9393337329d16ee2bfc72cdfdff917a6ed1a3009
