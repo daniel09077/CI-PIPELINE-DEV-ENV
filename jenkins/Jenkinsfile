@@ -53,17 +53,7 @@ pipeline{
                                     usernameVariable: 'NEXUS_USER', 
                                     passwordVariable: 'NEXUS_PASS')])
                                     {
-                                        sh '''
-                                                echo "Nexus username: $NEXUS_USER"
-
-                                                if [ -n "$NEXUS_PASS" ]; then
-                                                    echo "Nexus password is set: YES"
-                                                else
-                                                    echo "Nexus password is set: NO"
-                                                fi
-
-                                                mvn help:effective-settings -s "$MAVEN_SETTINGS"
-                                            '''
+                                        sh 'mvn deploy -s $MAVEN_SETTINGS'
                                         
                                     } 
                     }
