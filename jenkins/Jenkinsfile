@@ -9,7 +9,7 @@ pipeline{
                 checkout scm
             }
         }
-        stage('Maven Validate-pop'){
+        stage('Maven Validate'){
            steps{
                 dir(env.MAVEN_PROJ_DIR){
                     sh 'mvn validate'
