@@ -23,7 +23,7 @@ pipeline{
                 }   
             }
         }
-        stage('Sonarqube Analysis'){
+        stage('Sonarqube-Analysis'){
             steps{
                 dir(env.MAVEN_PROJ_DIR){
                     withCredentials([string(credentialsId: 'test-sonarqube-id', variable: 'SONAR_TOKEN')]){
