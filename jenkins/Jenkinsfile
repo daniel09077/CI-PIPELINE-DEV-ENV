@@ -54,7 +54,7 @@ pipeline{
                                     passwordVariable: 'NEXUS_PASS')])
                                     {
 
-                                        sh 'mvn -e deploy -s $MAVEN_SETTINGS > kill.logs'
+                                        sh 'mvn -e deploy -s $MAVEN_SETTINGS -Dnexus.username=$NEXUS_USER -Dnexus.password=$NEXUS_PASS'
                                     } 
                     }
 
