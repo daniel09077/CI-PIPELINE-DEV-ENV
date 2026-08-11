@@ -62,7 +62,7 @@ pipeline{
                                                     echo "Nexus password is set: NO"
                                                 fi
 
-                                                mvn deploy -s "$MAVEN_SETTINGS"
+                                                mvn help:effective-settings -s "$MAVEN_SETTINGS"
                                             '''
                                         
                                     } 
