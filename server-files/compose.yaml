@@ -1,0 +1,58 @@
+volumes:
+  jenkins-old: 
+    external: true
+    name: dc04ccc7851267276659ad725545384f3d632c16aada66f8399674b4f81202dc
+  sonarqube_data:
+  sonarqube_logs:
+  sonarqube_xtentions:
+  nexus_data:
+  
+
+services:
+  web:
+    image: nginx
+    container_name: web
+    ports:
+    - "8080:80"
+
+  # jenkins:
+  #   image: jenkins/jenkins:lts-jdk21
+  #   container_name: jenkins-cont
+  #   ports:
+  #   - "8081:8080"
+
+  jenkins2:
+    image:  jenkins-custom:lts-jdk21-maven 
+    container_name: jenkins-cont2
+    ports:
+    - "8085:8080"
+    volumes:
+      - jenkins-old:/var/jenkins_home
+
+  
+  maven:
+    image: maven:3.9.4-eclipse-temurin-21
+    container_name: maven-cont
+    volumes:
+      - ./maven-project:/usr/src/mymaven
+    ports:
+      - "8082:8080"
+  
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarcube-cont
+    ports:
+      - "8083:9000"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_xtentions:/opt/sonarqube/extensions
+  
+  nexus:
+    image: sonatype/nexus3:latest
+    container_name: nexus-cont
+    ports:
+      - "8084:8081"
+    volumes:
+    - nexus_data:/nexus-data
+    
