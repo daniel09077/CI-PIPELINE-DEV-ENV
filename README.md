@@ -1,12 +1,13 @@
 
 # JAVA-BASED-CI-PIPELINE-USING-DOCKER-CONTAINERS
 
-A Java based CI development environment designed to automate the software delivery lifecycle from source code commit to artifact deployment.
+A containerized Java Continuous Integration (CI) environment designed to automate the workflow from source code changes through build, testing, code quality analysis, and artifact publication.
 
-The project built on Ubuntu OS integrates GitHub, Jenkins, Maven, SonarQube, Nexus Repository, Docker, and Tailscale to create an automated pipeline where code changes trigger Jenkins, the application is validated and tested with Maven, code quality is analyzed with SonarQube, and successful build artifacts are deployed to Nexus.
+The project was built on an Ubuntu-based homelab environment using GitHub, Jenkins, Maven, SonarQube, Nexus Repository, Docker, and Tailscale.
 
-The project also explores webhook-based automation, credentials management, artifact repositories and containerized infrastructure.
+When code is pushed to GitHub, a webhook triggers Jenkins. Because Jenkins is hosted inside a private homelab network, Tailscale was used to provide the network connectivity required for the webhook to reach the Jenkins environment.
 
+Jenkins then checks out the source code, builds the Java application with Maven, runs the project's tests, performs code quality analysis with SonarQube, and publishes the resulting Maven artifact to Nexus Repository.
 
 ## CI-Pipeline-Architecture
 
