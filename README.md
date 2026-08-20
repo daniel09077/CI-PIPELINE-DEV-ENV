@@ -10,7 +10,7 @@ The project also explores webhook-based automation, credentials management, arti
 
 ## CI-Pipeline-Architecture
 
-![App Screenshot](https://drive.google.com/file/d/1_weRhipTw2r0OxubXmIDwwHmR8jmw8AN/view?usp=sharing)
+![App Screenshot]([https://drive.google.com/file/d/1_weRhipTw2r0OxubXmIDwwHmR8jmw8AN/view?usp=sharing](https://github.com/daniel09077/CI-PIPELINE-DEV-ENV/blob/c7b4c566be0ee9c67888546ad4dee96b629de6bb/CI-pipeline-project-simple-continous-architecture.jpg))
 ## Screenshots
 
 ![App Screenshot](https://drive.google.com/file/d/1_weRhipTw2r0OxubXmIDwwHmR8jmw8AN/view?usp=sharing)
