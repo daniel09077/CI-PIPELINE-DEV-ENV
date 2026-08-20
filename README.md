@@ -1,7 +1,7 @@
 
 # JAVA-BASED-CI-PIPELINE-USING-DOCKER-CONTAINERS
 
-A complete CI/CD development environment designed to automate the software delivery lifecycle from source code commit to artifact deployment.
+A Java based CI development environment designed to automate the software delivery lifecycle from source code commit to artifact deployment.
 
 The project built on Ubuntu OS integrates GitHub, Jenkins, Maven, SonarQube, Nexus Repository, Docker, and Tailscale to create an automated pipeline where code changes trigger Jenkins, the application is validated and tested with Maven, code quality is analyzed with SonarQube, and successful build artifacts are deployed to Nexus.
 
